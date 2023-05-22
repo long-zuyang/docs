@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>MyBatis-Plus使用</title>
-    <url>/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/</url>
+    <url>/docs/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="MyBatis-Plus简介"><a href="#MyBatis-Plus简介" class="headerlink" title="MyBatis-Plus简介"></a>MyBatis-Plus简介</h1><p><strong>本次将使用SpringBoot进行案例演示</strong></p>
 <p><strong>学习本章节之前，最好先有<a href="/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/">Mybatis基础</a>以及SpringBoot基础</strong></p>
 <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p><strong>MyBatis-Plus</strong>（简称 MP）是一个 <strong>MyBatis的增强工具</strong>，在 MyBatis 的基础上<strong>只做增强不做改变</strong>，为<br><strong>简化开发、提高效率而生</strong>。</p>
@@ -389,7 +389,7 @@
   </entry>
   <entry>
     <title>React的基本使用</title>
-    <url>/2022/06/07/React%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    <url>/docs/2022/06/07/React%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="React简介"><a href="#React简介" class="headerlink" title="React简介"></a>React简介</h1><ul>
 <li>React 是一个用于构建用户界面（UI，对咱们前端来说，简单理解为：HTML 页面）的 JavaScript 库  </li>
 <li>如果从mvc的角度来看，React仅仅是视图层（V）的解决方案。也就是只负责视图的渲染，并非提供了完整了M和C的功能</li>
@@ -1279,7 +1279,7 @@
   </entry>
   <entry>
     <title>MyBatis使用</title>
-    <url>/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/</url>
+    <url>/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="MyBatis简介"><a href="#MyBatis简介" class="headerlink" title="MyBatis简介"></a>MyBatis简介</h1><p><strong>学习本章节前最好先有JDBC基础，Maven基础</strong></p>
 <p><strong>会创建Maven工程</strong></p>
 <h2 id="MyBatis历史"><a href="#MyBatis历史" class="headerlink" title="MyBatis历史"></a>MyBatis历史</h2><p>MyBatis最初是Apache的一个开源项目<strong>iBatis</strong>, 2010年6月这个项目由Apache Software Foundation迁<br>移到了Google Code。随着开发团队转投Google Code旗下， iBatis3.x正式更名为MyBatis。代码于<br>2013年11月迁移到Github。</p>
@@ -1924,7 +1924,7 @@
   </entry>
   <entry>
     <title>Spring5框架</title>
-    <url>/2022/05/31/Spring5%E6%A1%86%E6%9E%B6/</url>
+    <url>/docs/2022/05/31/Spring5%E6%A1%86%E6%9E%B6/</url>
     <content><![CDATA[<h1 id="Spring5"><a href="#Spring5" class="headerlink" title="Spring5"></a>Spring5</h1><blockquote>
 <p><font color=red size=5>代码以及配套资料下载地址</font> <a href="https://buglong.lanzoub.com/i0qaP062tqsh">点我，密码 &#x3D;&#x3D;&gt; long</a></p>
 </blockquote>
