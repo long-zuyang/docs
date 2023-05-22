@@ -7,3 +7,4 @@ node_modules/
 _multiconfig.yml
 .history
 pnpm-lock.yaml
+source/_posts/*/*.png
