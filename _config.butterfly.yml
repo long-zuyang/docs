@@ -684,7 +684,7 @@ aside:
       link: https://github.com/long-zuyang
   card_announcement:
     enable: true
-    content: This is my Web Documentation.
+    content: 无人问津也好，技不如人也罢，你都要试着安静下来，去做自己喜欢的事情，而不是让烦恼和焦虑毁掉你本就不多的热情和定力。心可以碎，手不能停，该干什么干什么，在崩溃中继续前行，这才是一个成年人的修养。
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
