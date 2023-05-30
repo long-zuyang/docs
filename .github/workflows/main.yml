@@ -16,18 +16,16 @@ jobs:
       # 拉取代码
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      
+
       # 生成静态文件
       - name: Build Project
-        run: |
-          pnpm install
-          pnpm run build
-          
+        run: npm install && npm run build
+
       # 部署到 GitHub Pages
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
