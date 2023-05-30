@@ -18,5 +18,6 @@
 - QT
 - Rust
 - Java
+- Linux
 
 > 本项目持续更新...
