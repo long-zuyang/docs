@@ -1,6 +1,6 @@
 ---
 title: MyBatis使用
-date: 2022-05-20 08:46:09
+date: 2022-05-16 08:56:42
 tags:
 - JavaEE
 - MyBatis
@@ -1748,5 +1748,3 @@ public void testMBG() throws IOException {
         list.forEach(System.out::println);
     }
 ```
-
-# 本章到此结束，如果还想继续学习，可以看看博客中的MyBatis-Plus

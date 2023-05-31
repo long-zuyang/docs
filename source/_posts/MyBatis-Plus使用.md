@@ -1,6 +1,6 @@
 ---
 title: MyBatis-Plus使用
-date: 2022-05-16 08:56:42
+date: 2022-05-20 08:46:09
 tags:
 - JavaEE
 - MyBatis
@@ -12,7 +12,7 @@ cover: https://s2.loli.net/2022/05/16/pDs5EMFkXvHJyZ1.png
 
 **本次将使用SpringBoot进行案例演示**
 
-**学习本章节之前，最好先有[Mybatis基础](/2022/05/20/MyBatis使用/)以及SpringBoot基础**
+**学习本章节之前，最好先有[Mybatis基础](/docs/2022/05/16/MyBatis使用/)以及SpringBoot基础**
 
 ## 1.简介
 **MyBatis-Plus**（简称 MP）是一个 **MyBatis的增强工具**，在 MyBatis 的基础上**只做增强不做改变**，为
