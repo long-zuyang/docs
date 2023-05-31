@@ -6,6 +6,7 @@ tags:
 - React
 categories: Web前端
 cover: https://s2.loli.net/2022/06/08/G83TBvkaOQxcqj2.png
+toc_style_simple: true
 ---
 
 # React简介
