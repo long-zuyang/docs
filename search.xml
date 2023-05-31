@@ -13,9 +13,9 @@
   </entry>
   <entry>
     <title>MyBatis-Plus使用</title>
-    <url>/docs/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/</url>
+    <url>/docs/2022/05/20/MyBatis-Plus%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="MyBatis-Plus简介"><a href="#MyBatis-Plus简介" class="headerlink" title="MyBatis-Plus简介"></a>MyBatis-Plus简介</h1><p><strong>本次将使用SpringBoot进行案例演示</strong></p>
-<p><strong>学习本章节之前，最好先有<a href="/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/">Mybatis基础</a>以及SpringBoot基础</strong></p>
+<p><strong>学习本章节之前，最好先有<a href="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/">Mybatis基础</a>以及SpringBoot基础</strong></p>
 <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p><strong>MyBatis-Plus</strong>（简称 MP）是一个 <strong>MyBatis的增强工具</strong>，在 MyBatis 的基础上<strong>只做增强不做改变</strong>，为<br><strong>简化开发、提高效率而生</strong>。</p>
 <h2 id="2-特性"><a href="#2-特性" class="headerlink" title="2.特性"></a>2.特性</h2><ul>
 <li><strong>无侵入</strong>：只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑</li>
@@ -31,7 +31,7 @@
 <li><strong>内置性能分析插件</strong>：可输出 SQL 语句以及其执行时间，建议开发测试时启用该功能，能快速揪出慢查询</li>
 <li><strong>内置全局拦截插件</strong>：提供全表 delete 、 update 操作智能分析阻断，也可自定义拦截规则，预防误操作</li>
 </ul>
-<h2 id="3-框架结构"><a href="#3-框架结构" class="headerlink" title="3.框架结构"></a>3.框架结构</h2><p><img src="/docs/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-16_14-28-07.png" alt="Mybatis-Plus框架结构"></p>
+<h2 id="3-框架结构"><a href="#3-框架结构" class="headerlink" title="3.框架结构"></a>3.框架结构</h2><p><img src="/docs/2022/05/20/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-16_14-28-07.png" alt="Mybatis-Plus框架结构"></p>
 <h1 id="创建项目并初始化开发环境"><a href="#创建项目并初始化开发环境" class="headerlink" title="创建项目并初始化开发环境"></a>创建项目并初始化开发环境</h1><ul>
 <li>IDE: IDEA 2021.3</li>
 <li>JDK: jdk8+</li>
@@ -162,7 +162,7 @@
 <h3 id="实现逻辑删除"><a href="#实现逻辑删除" class="headerlink" title="实现逻辑删除"></a>实现逻辑删除</h3><blockquote>
 <p>步骤1：在数据库表中新建一个逻辑删除队列，设置默认值为 0</p>
 </blockquote>
-<p><img src="/docs/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_14-18-08.png" alt="创建一个逻辑删除列"></p>
+<p><img src="/docs/2022/05/20/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_14-18-08.png" alt="创建一个逻辑删除列"></p>
 <blockquote>
 <p>步骤2：实体类中添加逻辑删除属性并且加上 <code>@TableLogic</code>注解</p>
 </blockquote>
@@ -172,7 +172,7 @@
 <p>步骤3：测试</p>
 <p>测试删除功能，真正执行的是修改<br>UPDATE t_user SET is_deleted&#x3D;1 WHERE id&#x3D;? AND is_deleted&#x3D;0<br>测试查询功能，被逻辑删除的数据默认不会被查询<br>SELECT id,username AS name,age,email,is_deleted FROM t_user WHERE is_deleted&#x3D;0</p>
 </blockquote>
-<h1 id="条件构造器以及常用的接口"><a href="#条件构造器以及常用的接口" class="headerlink" title="条件构造器以及常用的接口"></a>条件构造器以及常用的接口</h1><h2 id="Wrapper是什么"><a href="#Wrapper是什么" class="headerlink" title="Wrapper是什么"></a>Wrapper是什么</h2><p><img src="/docs/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_14-22-42.png" alt="Wrapper类之间的关系"></p>
+<h1 id="条件构造器以及常用的接口"><a href="#条件构造器以及常用的接口" class="headerlink" title="条件构造器以及常用的接口"></a>条件构造器以及常用的接口</h1><h2 id="Wrapper是什么"><a href="#Wrapper是什么" class="headerlink" title="Wrapper是什么"></a>Wrapper是什么</h2><p><img src="/docs/2022/05/20/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_14-22-42.png" alt="Wrapper类之间的关系"></p>
 <ul>
 <li>Wrapper：条件构造抽象类<ul>
 <li>AbstractWrapper ： 用于查询条件封装，生成 sql 的 where 条件<ul>
@@ -241,7 +241,7 @@
 
 <blockquote>
 <p>结果：</p>
-<p>[User(id&#x3D;1, name&#x3D;Jone, age&#x3D;18, email&#x3D;<a href="mailto:&#116;&#x65;&#115;&#116;&#x31;&#x40;&#98;&#97;&#111;&#109;&#x69;&#100;&#x6f;&#117;&#46;&#99;&#111;&#x6d;">&#116;&#x65;&#115;&#116;&#x31;&#x40;&#98;&#97;&#111;&#109;&#x69;&#100;&#x6f;&#117;&#46;&#99;&#111;&#x6d;</a>, isDeleted&#x3D;0), User(id&#x3D;2, name&#x3D;Jack, age&#x3D;20, email&#x3D;<a href="mailto:&#x74;&#101;&#115;&#116;&#x32;&#x40;&#98;&#x61;&#x6f;&#109;&#105;&#x64;&#x6f;&#x75;&#46;&#x63;&#111;&#x6d;">&#x74;&#101;&#115;&#116;&#x32;&#x40;&#98;&#x61;&#x6f;&#109;&#105;&#x64;&#x6f;&#x75;&#46;&#x63;&#111;&#x6d;</a>, isDeleted&#x3D;0), User(id&#x3D;3, name&#x3D;Tom, age&#x3D;28, email&#x3D;<a href="mailto:&#x74;&#x65;&#x73;&#116;&#51;&#64;&#98;&#x61;&#x6f;&#x6d;&#x69;&#x64;&#x6f;&#x75;&#46;&#99;&#x6f;&#x6d;">&#x74;&#x65;&#x73;&#116;&#51;&#64;&#98;&#x61;&#x6f;&#x6d;&#x69;&#x64;&#x6f;&#x75;&#46;&#99;&#x6f;&#x6d;</a>, isDeleted&#x3D;0)]<br>当前页码：1<br>每页显示数量：3<br>总页数：4<br>总记录数：10<br>是否有下一页：true<br>是否有上一页：false</p>
+<p>[User(id&#x3D;1, name&#x3D;Jone, age&#x3D;18, email&#x3D;<a href="mailto:&#116;&#101;&#x73;&#x74;&#49;&#64;&#x62;&#97;&#111;&#109;&#x69;&#100;&#111;&#117;&#x2e;&#99;&#x6f;&#109;">&#116;&#101;&#x73;&#x74;&#49;&#64;&#x62;&#97;&#111;&#109;&#x69;&#100;&#111;&#117;&#x2e;&#99;&#x6f;&#109;</a>, isDeleted&#x3D;0), User(id&#x3D;2, name&#x3D;Jack, age&#x3D;20, email&#x3D;<a href="mailto:&#x74;&#101;&#x73;&#x74;&#50;&#x40;&#x62;&#97;&#x6f;&#x6d;&#105;&#100;&#111;&#x75;&#46;&#x63;&#x6f;&#109;">&#x74;&#101;&#x73;&#x74;&#50;&#x40;&#x62;&#97;&#x6f;&#x6d;&#105;&#100;&#111;&#x75;&#46;&#x63;&#x6f;&#109;</a>, isDeleted&#x3D;0), User(id&#x3D;3, name&#x3D;Tom, age&#x3D;28, email&#x3D;<a href="mailto:&#116;&#101;&#x73;&#x74;&#51;&#x40;&#98;&#x61;&#111;&#109;&#x69;&#x64;&#111;&#117;&#46;&#x63;&#x6f;&#109;">&#116;&#101;&#x73;&#x74;&#51;&#x40;&#98;&#x61;&#111;&#109;&#x69;&#x64;&#111;&#117;&#46;&#x63;&#x6f;&#109;</a>, isDeleted&#x3D;0)]<br>当前页码：1<br>每页显示数量：3<br>总页数：4<br>总记录数：10<br>是否有下一页：true<br>是否有上一页：false</p>
 </blockquote>
 <h2 id="自定义分页功能"><a href="#自定义分页功能" class="headerlink" title="自定义分页功能"></a>自定义分页功能</h2><h3 id="UserMapper类中自定义方法"><a href="#UserMapper类中自定义方法" class="headerlink" title="UserMapper类中自定义方法"></a>UserMapper类中自定义方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 通过年龄查询用户信息并分页</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> page Mybatis-Plus 提供的分页对象</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> age age</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Page&lt;User&gt; <span class="title function_">selectPageVo</span><span class="params">(<span class="meta">@Param(&quot;page&quot;)</span> Page&lt;User&gt; page, <span class="meta">@Param(&quot;age&quot;)</span> Integer age)</span>;</span><br></pre></td></tr></table></figure>
 
@@ -306,7 +306,7 @@
 <h1 id="通用枚举"><a href="#通用枚举" class="headerlink" title="通用枚举"></a>通用枚举</h1><blockquote>
 <p>表中的有些字段值是固定的，例如性别（男或女），此时我们可以使用MyBatis-Plus的通用枚举来实现</p>
 </blockquote>
-<h2 id="数据库User表添加sex字段"><a href="#数据库User表添加sex字段" class="headerlink" title="数据库User表添加sex字段"></a>数据库User表添加sex字段</h2><p><img src="/docs/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_16-43-39.png" alt="User表添加sex字段"></p>
+<h2 id="数据库User表添加sex字段"><a href="#数据库User表添加sex字段" class="headerlink" title="数据库User表添加sex字段"></a>数据库User表添加sex字段</h2><p><img src="/docs/2022/05/20/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_16-43-39.png" alt="User表添加sex字段"></p>
 <h2 id="创建通用枚举类型"><a href="#创建通用枚举类型" class="headerlink" title="创建通用枚举类型"></a>创建通用枚举类型</h2><blockquote>
 <p>**给需要添加值数据库的枚举添加 <code>@EnumValue属性</code> **</p>
 </blockquote>
@@ -377,16 +377,16 @@
 
 <blockquote>
 <p>结果：</p>
-<p>Product(id&#x3D;1, name&#x3D;外星人笔记本, price&#x3D;100, version&#x3D;0)<br>User(id&#x3D;1, name&#x3D;Jone, age&#x3D;18, sex&#x3D;null, email&#x3D;<a href="mailto:&#116;&#x65;&#115;&#x74;&#x31;&#64;&#x62;&#x61;&#x6f;&#x6d;&#x69;&#100;&#111;&#117;&#x2e;&#99;&#x6f;&#109;">&#116;&#x65;&#115;&#x74;&#x31;&#64;&#x62;&#x61;&#x6f;&#x6d;&#x69;&#100;&#111;&#117;&#x2e;&#99;&#x6f;&#109;</a>, isDeleted&#x3D;0)</p>
+<p>Product(id&#x3D;1, name&#x3D;外星人笔记本, price&#x3D;100, version&#x3D;0)<br>User(id&#x3D;1, name&#x3D;Jone, age&#x3D;18, sex&#x3D;null, email&#x3D;<a href="mailto:&#116;&#101;&#x73;&#x74;&#x31;&#x40;&#98;&#x61;&#x6f;&#x6d;&#x69;&#x64;&#111;&#x75;&#x2e;&#99;&#111;&#109;">&#116;&#101;&#x73;&#x74;&#x31;&#x40;&#98;&#x61;&#x6f;&#x6d;&#x69;&#x64;&#111;&#x75;&#x2e;&#99;&#111;&#109;</a>, isDeleted&#x3D;0)</p>
 </blockquote>
 <h1 id="使用IDEA-MybatisX插件生成代码"><a href="#使用IDEA-MybatisX插件生成代码" class="headerlink" title="使用IDEA MybatisX插件生成代码"></a>使用IDEA MybatisX插件生成代码</h1><blockquote>
 <p>MyBatis-Plus为我们提供了强大的mapper和service模板，能够大大的提高开发效率但是在真正开发过程中，MyBatis-Plus并不能为我们解决所有问题，例如一些复杂的SQL，多表联查，我们就需要自己去编写代和SQL语句，我们该如何快速的解决这个问题呢，这个时候可以使用MyBatisX插件。</p>
 <p>MyBatisX一款基于 IDEA 的快速开发插件，为效率而生。</p>
 </blockquote>
-<p><img src="/docs/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_21-19-55.png" alt="IDEA下载MybatisX插件"></p>
-<p><img src="/docs/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_21-20-55.png" alt="IDEA连接数据库"></p>
-<p><img src="/docs/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_21-23-23.png" alt="代码生成设置"></p>
-<p><img src="/docs/2022/05/16/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_21-24-01.png" alt="代码生成设置2"></p>
+<p><img src="/docs/2022/05/20/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_21-19-55.png" alt="IDEA下载MybatisX插件"></p>
+<p><img src="/docs/2022/05/20/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_21-20-55.png" alt="IDEA连接数据库"></p>
+<p><img src="/docs/2022/05/20/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_21-23-23.png" alt="代码生成设置"></p>
+<p><img src="/docs/2022/05/20/MyBatis-Plus%E4%BD%BF%E7%94%A8/Snipaste_2022-05-17_21-24-01.png" alt="代码生成设置2"></p>
 <p><strong>MyBatisX插件用法：<a href="https://baomidou.com/pages/ba5b24">https://baomidou.com/pages/ba5b24</a></strong></p>
 ]]></content>
       <categories>
@@ -400,7 +400,7 @@
   </entry>
   <entry>
     <title>MyBatis使用</title>
-    <url>/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/</url>
+    <url>/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="MyBatis简介"><a href="#MyBatis简介" class="headerlink" title="MyBatis简介"></a>MyBatis简介</h1><p><strong>学习本章节前最好先有JDBC基础，Maven基础</strong></p>
 <p><strong>会创建Maven工程</strong></p>
 <h2 id="MyBatis历史"><a href="#MyBatis历史" class="headerlink" title="MyBatis历史"></a>MyBatis历史</h2><p>MyBatis最初是Apache的一个开源项目<strong>iBatis</strong>, 2010年6月这个项目由Apache Software Foundation迁<br>移到了Google Code。随着开发团队转投Google Code旗下， iBatis3.x正式更名为MyBatis。代码于<br>2013年11月迁移到Github。</p>
@@ -413,7 +413,7 @@
 <h2 id="Mybatis下载"><a href="#Mybatis下载" class="headerlink" title="Mybatis下载"></a>Mybatis下载</h2><blockquote>
 <p>下载地址：<a href="https://github.com/mybatis/mybatis-3">点这里</a></p>
 </blockquote>
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_11-44-50.png" alt="Mybatis的下载"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_11-44-50.png" alt="Mybatis的下载"></p>
 <h2 id="和其他持久化层技术对比"><a href="#和其他持久化层技术对比" class="headerlink" title="和其他持久化层技术对比"></a>和其他持久化层技术对比</h2><ul>
 <li>JDBC<ul>
 <li>SQL 夹杂在Java代码中耦合度高，导致硬编码内伤</li>
@@ -506,8 +506,8 @@
 <blockquote>
 <p>执行成功</p>
 </blockquote>
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_14-30-52.png" alt="执行成功"></p>
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_14-30-58.png" alt="执行成功"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_14-30-52.png" alt="执行成功"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_14-30-58.png" alt="执行成功"></p>
 <h2 id="加入Log4j日志功能"><a href="#加入Log4j日志功能" class="headerlink" title="加入Log4j日志功能"></a>加入Log4j日志功能</h2><h3 id="添加Maven依赖"><a href="#添加Maven依赖" class="headerlink" title="添加Maven依赖"></a>添加Maven依赖</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- log4j日志 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="加入Log4j配置文件"><a href="#加入Log4j配置文件" class="headerlink" title="加入Log4j配置文件"></a>加入Log4j配置文件</h3><blockquote>
@@ -553,7 +553,7 @@
 <blockquote>
 <p>结果：</p>
 </blockquote>
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_15-13-00.png" alt="修改"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_15-13-00.png" alt="修改"></p>
 <h2 id="查询一个实体类对象"><a href="#查询一个实体类对象" class="headerlink" title="查询一个实体类对象"></a>查询一个实体类对象</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">User <span class="title function_">getUserById</span><span class="params">()</span>;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getUserById&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.along.pojo.User&quot;</span>&gt;</span></span><br><span class="line">    select *</span><br><span class="line">    from t_user</span><br><span class="line">    where id = 2</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -561,7 +561,7 @@
 <blockquote>
 <p>结果：</p>
 </blockquote>
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_15-11-05.png" alt="查询一个实体类对象"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_15-11-05.png" alt="查询一个实体类对象"></p>
 <h2 id="查询一个List集合"><a href="#查询一个List集合" class="headerlink" title="查询一个List集合"></a>查询一个List集合</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;User&gt; <span class="title function_">getUserList</span><span class="params">()</span>;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getUserList&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.along.pojo.User&quot;</span>&gt;</span></span><br><span class="line">    select *</span><br><span class="line">    from t_user</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -569,7 +569,7 @@
 <blockquote>
 <p>结果：</p>
 </blockquote>
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_15-12-22.png" alt="查询集合"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-20_15-12-22.png" alt="查询集合"></p>
 <h1 id="MyBatis获取参数值的两种方式"><a href="#MyBatis获取参数值的两种方式" class="headerlink" title="MyBatis获取参数值的两种方式"></a>MyBatis获取参数值的两种方式</h1><blockquote>
 <p>MyBatis获取参数值的两种方式：**${}<strong>和</strong>#{}**</p>
 <p>${}的本质就是字符串拼接，#{}的本质就是占位符赋值</p>
@@ -593,7 +593,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test05</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">UserMapper</span> <span class="variable">userMapper</span> <span class="operator">=</span> SqlSessionUtils.getSqlSession().getMapper(UserMapper.class);</span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userMapper.getUserByName(<span class="string">&quot;ybc&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;result：&quot;</span> + user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>结果：result：User{id&#x3D;1, name&#x3D;’ybc’, age&#x3D;18, email&#x3D;‘<a href="mailto:&#x78;&#x78;&#x78;&#120;&#64;&#113;&#113;&#x2e;&#99;&#111;&#109;">&#x78;&#x78;&#x78;&#120;&#64;&#113;&#113;&#x2e;&#99;&#111;&#109;</a>‘, isDeleted&#x3D;0, sex&#x3D;1}</p>
+<p>结果：result：User{id&#x3D;1, name&#x3D;’ybc’, age&#x3D;18, email&#x3D;‘<a href="mailto:&#x78;&#x78;&#120;&#x78;&#x40;&#x71;&#x71;&#46;&#x63;&#111;&#x6d;">&#x78;&#x78;&#120;&#x78;&#x40;&#x71;&#x71;&#46;&#x63;&#111;&#x6d;</a>‘, isDeleted&#x3D;0, sex&#x3D;1}</p>
 </blockquote>
 <h2 id="map集合类型的参数"><a href="#map集合类型的参数" class="headerlink" title="map集合类型的参数"></a>map集合类型的参数</h2><p>若mapper接口中的方法需要的参数为多个时，此时可以手动创建map集合，将这些数据放map中</p>
 <p>只需要通过${}和#{}访问map集合的键就可以获取相对应的值，注意${}需要手动加单引号</p>
@@ -614,7 +614,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test06</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">UserMapper</span> <span class="variable">userMapper</span> <span class="operator">=</span> SqlSessionUtils.getSqlSession().getMapper(UserMapper.class);</span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userMapper.checkLoginBtParam(<span class="string">&quot;ybc&quot;</span>, <span class="number">18</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;result：&quot;</span> + user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>结果：result：User{id&#x3D;1, name&#x3D;’ybc’, age&#x3D;18, email&#x3D;‘<a href="mailto:&#x78;&#x78;&#120;&#120;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#x6d;">&#x78;&#x78;&#120;&#120;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#x6d;</a>‘, isDeleted&#x3D;0, sex&#x3D;1}</p>
+<p>结果：result：User{id&#x3D;1, name&#x3D;’ybc’, age&#x3D;18, email&#x3D;‘<a href="mailto:&#x78;&#120;&#120;&#120;&#x40;&#113;&#113;&#46;&#99;&#111;&#109;">&#x78;&#120;&#120;&#120;&#x40;&#113;&#113;&#46;&#99;&#111;&#109;</a>‘, isDeleted&#x3D;0, sex&#x3D;1}</p>
 </blockquote>
 <h1 id="MyBatis的各种查询功能"><a href="#MyBatis的各种查询功能" class="headerlink" title="MyBatis的各种查询功能"></a>MyBatis的各种查询功能</h1><h2 id="查询单个数据"><a href="#查询单个数据" class="headerlink" title="查询单个数据"></a>查询单个数据</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 查询用户的总记录数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">getCount</span><span class="params">()</span>;</span><br></pre></td></tr></table></figure>
 
@@ -638,7 +638,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test08</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">UserMapper</span> <span class="variable">userMapper</span> <span class="operator">=</span> SqlSessionUtils.getSqlSession().getMapper(UserMapper.class);</span><br><span class="line">    Map&lt;String, Object&gt; userToMap = userMapper.getUserToMap(<span class="number">1</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;map：&quot;</span> + userToMap);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>结果：map：{ybc&#x3D;{is_deleted&#x3D;0, sex&#x3D;1, name&#x3D;ybc, id&#x3D;1, age&#x3D;18, email&#x3D;<a href="mailto:&#x78;&#120;&#x78;&#120;&#64;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#x78;&#120;&#x78;&#120;&#64;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a>}}</p>
+<p>结果：map：{ybc&#x3D;{is_deleted&#x3D;0, sex&#x3D;1, name&#x3D;ybc, id&#x3D;1, age&#x3D;18, email&#x3D;<a href="mailto:&#x78;&#x78;&#x78;&#120;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#109;">&#x78;&#x78;&#x78;&#120;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#109;</a>}}</p>
 </blockquote>
 <h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 查询所有用户信息为map集合</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 将表中的数据以map集合的方式查询，一条数据对应一个map；若有多条数据，就会产生多个map集合，并</span></span><br><span class="line"><span class="comment"> * 且最终要以一个map的方式返回数据，此时需要通过<span class="doctag">@MapKey</span>注解设置map集合的键，值是每条数据所对应的</span></span><br><span class="line"><span class="comment"> * map集合</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@MapKey(&quot;id&quot;)</span></span><br><span class="line">Map&lt;String, Object&gt; <span class="title function_">getAllUserToMap</span><span class="params">()</span>;</span><br></pre></td></tr></table></figure>
 
@@ -793,14 +793,14 @@
 <p><strong>测试：（无效二级缓存）</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testCatch</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">is</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        is = Resources.getResourceAsStream(<span class="string">&quot;mybatis-config.xml&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">SqlSessionFactoryBuilder</span> <span class="variable">sqlSessionFactoryBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SqlSessionFactoryBuilder</span>();</span><br><span class="line">    <span class="type">SqlSessionFactory</span> <span class="variable">sqlSessionFactory</span> <span class="operator">=</span> sqlSessionFactoryBuilder.build(is);</span><br><span class="line">    <span class="type">SqlSession</span> <span class="variable">sqlSessionA</span> <span class="operator">=</span> sqlSessionFactory.openSession(<span class="literal">true</span>);</span><br><span class="line">    <span class="type">UserMapper</span> <span class="variable">userMapperA</span> <span class="operator">=</span> sqlSessionA.getMapper(UserMapper.class);</span><br><span class="line">    System.out.println(userMapperA.getCount());</span><br><span class="line"></span><br><span class="line">    <span class="type">SqlSession</span> <span class="variable">sqlSessionB</span> <span class="operator">=</span> sqlSessionFactory.openSession(<span class="literal">true</span>);</span><br><span class="line">    <span class="type">UserMapper</span> <span class="variable">userMapperB</span> <span class="operator">=</span> sqlSessionB.getMapper(UserMapper.class);</span><br><span class="line">    System.out.println(userMapperB.getCount());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_14-42-59.png" alt="测试未生效二级缓存"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_14-42-59.png" alt="测试未生效二级缓存"></p>
 <p><strong>测试：（二级缓存生效）</strong></p>
 <blockquote>
 <p>给每个SqlSession手动close()关闭</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testCatch</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">is</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        is = Resources.getResourceAsStream(<span class="string">&quot;mybatis-config.xml&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">SqlSessionFactoryBuilder</span> <span class="variable">sqlSessionFactoryBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SqlSessionFactoryBuilder</span>();</span><br><span class="line">    <span class="type">SqlSessionFactory</span> <span class="variable">sqlSessionFactory</span> <span class="operator">=</span> sqlSessionFactoryBuilder.build(is);</span><br><span class="line">    <span class="type">SqlSession</span> <span class="variable">sqlSessionA</span> <span class="operator">=</span> sqlSessionFactory.openSession(<span class="literal">true</span>);</span><br><span class="line">    <span class="type">UserMapper</span> <span class="variable">userMapperA</span> <span class="operator">=</span> sqlSessionA.getMapper(UserMapper.class);</span><br><span class="line">    System.out.println(userMapperA.getCount());</span><br><span class="line">    sqlSessionA.close();</span><br><span class="line"></span><br><span class="line">    <span class="type">SqlSession</span> <span class="variable">sqlSessionB</span> <span class="operator">=</span> sqlSessionFactory.openSession(<span class="literal">true</span>);</span><br><span class="line">    <span class="type">UserMapper</span> <span class="variable">userMapperB</span> <span class="operator">=</span> sqlSessionB.getMapper(UserMapper.class);</span><br><span class="line">    System.out.println(userMapperB.getCount());</span><br><span class="line">    sqlSessionB.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_14-46-34.png" alt="测试生效二级缓存"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_14-46-34.png" alt="测试生效二级缓存"></p>
 <h2 id="二级缓存相关配置"><a href="#二级缓存相关配置" class="headerlink" title="二级缓存相关配置"></a>二级缓存相关配置</h2><blockquote>
 <p>在mapper配置文件中添加的cache标签可以设置一些属性：</p>
 </blockquote>
@@ -936,7 +936,7 @@
 </blockquote>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span> <span class="attr">debug</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 指定日志输出的位置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;STDOUT&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 日志输出的格式 --&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 按照顺序分别是：时间、日志级别、线程名称、打印日志的类、日志主体内容、换行 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>[%d&#123;HH:mm:ss.SSS&#125;] [%-5level] [%thread] [%logger] [%msg]%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 设置全局日志级别。日志级别按顺序分别是：DEBUG、INFO、WARN、ERROR --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 指定任何一个日志级别都只打印当前级别和后面级别的日志。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">&quot;DEBUG&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 指定打印日志的appender，这里通过“STDOUT”引用了前面配置的appender --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;STDOUT&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 根据特殊需求指定局部日志级别 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;com.atguigu.crowd.mapper&quot;</span> <span class="attr">level</span>=<span class="string">&quot;DEBUG&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_15-35-32.png" alt="测试第三方二级缓存"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_15-35-32.png" alt="测试第三方二级缓存"></p>
 <h1 id="MyBatis的逆向工程（代码生成器）"><a href="#MyBatis的逆向工程（代码生成器）" class="headerlink" title="MyBatis的逆向工程（代码生成器）"></a>MyBatis的逆向工程（代码生成器）</h1><blockquote>
 <ul>
 <li>正向工程：先创建Java实体类，由框架负责根据实体类生成数据库表。Hibernate是支持正向工程的。</li>
@@ -961,7 +961,7 @@
 <h3 id="执行MBG插件的generate目标"><a href="#执行MBG插件的generate目标" class="headerlink" title="执行MBG插件的generate目标"></a>执行MBG插件的generate目标</h3><blockquote>
 <p>执行前：</p>
 </blockquote>
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_15-58-29.png" alt="执行前"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_15-58-29.png" alt="执行前"></p>
 <blockquote>
 <p><font color=red><strong>如果这里报：Unknown initial character set index ‘255’ received from server. Initial client character set can be forced via the ‘characterEncoding’ property.</strong></font></p>
 <p><font color=red><strong>请检查连接数据库url有没有设置charset字符集</strong></font></p>
@@ -969,15 +969,15 @@
 <blockquote>
 <p>执行：</p>
 </blockquote>
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_15-57-43.png" alt="执行generate目标"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_15-57-43.png" alt="执行generate目标"></p>
 <blockquote>
 <p>执行中：</p>
 </blockquote>
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_16-00-38.png" alt="执行中"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_16-00-38.png" alt="执行中"></p>
 <blockquote>
 <p>执行后：</p>
 </blockquote>
-<p><img src="/docs/2022/05/20/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_16-00-50.png" alt="执行后"></p>
+<p><img src="/docs/2022/05/16/MyBatis%E4%BD%BF%E7%94%A8/Snipaste_2022-05-23_16-00-50.png" alt="执行后"></p>
 <h3 id="QBC查询（小知识）"><a href="#QBC查询（小知识）" class="headerlink" title="QBC查询（小知识）"></a>QBC查询（小知识）</h3><blockquote>
 <p><strong>前提：MBG插件使用MyBatis3版本生成代码</strong></p>
 </blockquote>
@@ -1016,7 +1016,7 @@
 <p>PageInfo相关数据</p>
 <p>PageInfo{</p>
 <p>pageNum&#x3D;1, pageSize&#x3D;2, size&#x3D;2, startRow&#x3D;1, endRow&#x3D;2, total&#x3D;3, pages&#x3D;2, </p>
-<p>list&#x3D;Page{count&#x3D;true, pageNum&#x3D;1, pageSize&#x3D;2, startRow&#x3D;0, endRow&#x3D;2, total&#x3D;3, pages&#x3D;2, reasonable&#x3D;false, pageSizeZero&#x3D;false}[User{id&#x3D;1, name&#x3D;’ybc’, age&#x3D;18, email&#x3D;‘<a href="mailto:&#x78;&#120;&#x78;&#x78;&#x40;&#113;&#x71;&#46;&#99;&#111;&#x6d;">&#x78;&#120;&#x78;&#x78;&#x40;&#113;&#x71;&#46;&#99;&#111;&#x6d;</a>‘, isDeleted&#x3D;0, sex&#x3D;1}, User{id&#x3D;2, name&#x3D;’小廖’, age&#x3D;13, email&#x3D;‘<a href="mailto:&#120;&#x78;&#x78;&#120;&#x40;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#120;&#x78;&#x78;&#120;&#x40;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a>‘, isDeleted&#x3D;0, sex&#x3D;1}], </p>
+<p>list&#x3D;Page{count&#x3D;true, pageNum&#x3D;1, pageSize&#x3D;2, startRow&#x3D;0, endRow&#x3D;2, total&#x3D;3, pages&#x3D;2, reasonable&#x3D;false, pageSizeZero&#x3D;false}[User{id&#x3D;1, name&#x3D;’ybc’, age&#x3D;18, email&#x3D;‘<a href="mailto:&#120;&#x78;&#120;&#x78;&#64;&#x71;&#x71;&#46;&#99;&#x6f;&#109;">&#120;&#x78;&#120;&#x78;&#64;&#x71;&#x71;&#46;&#99;&#x6f;&#109;</a>‘, isDeleted&#x3D;0, sex&#x3D;1}, User{id&#x3D;2, name&#x3D;’小廖’, age&#x3D;13, email&#x3D;‘<a href="mailto:&#120;&#x78;&#120;&#120;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#109;">&#120;&#x78;&#120;&#120;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#109;</a>‘, isDeleted&#x3D;0, sex&#x3D;1}], </p>
 <p>prePage&#x3D;0, nextPage&#x3D;2, isFirstPage&#x3D;true, isLastPage&#x3D;false, hasPreviousPage&#x3D;false, hasNextPage&#x3D;true, navigatePages&#x3D;2, navigateFirstPage&#x3D;1, navigateLastPage&#x3D;2, navigatepageNums&#x3D;[1, 2]</p>
 <p>}</p>
 <p>常用数据</p>
@@ -1033,8 +1033,7 @@
 <p>navigatepageNums：导航分页的页码，[1,2,3,4,5]</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testPage</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">is</span> <span class="operator">=</span> Resources.getResourceAsStream(<span class="string">&quot;mybatis-config.xml&quot;</span>);</span><br><span class="line">    <span class="type">SqlSessionFactory</span> <span class="variable">sqlSessionFactory</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SqlSessionFactoryBuilder</span>().build(is);</span><br><span class="line">    <span class="type">SqlSession</span> <span class="variable">sqlSession</span> <span class="operator">=</span> sqlSessionFactory.openSession(<span class="literal">true</span>);</span><br><span class="line">    <span class="type">UserMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> sqlSession.getMapper(UserMapper.class);</span><br><span class="line">    PageHelper .startPage(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">    List&lt;User&gt; list = mapper.selectByExample(<span class="literal">null</span>);</span><br><span class="line">    PageInfo&lt;User&gt; page = <span class="keyword">new</span> <span class="title class_">PageInfo</span>&lt;&gt;(list, <span class="number">2</span>) <span class="comment">// 详细信息</span></span><br><span class="line">    list.forEach(System.out::println);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="本章到此结束，如果还想继续学习，可以看看博客中的MyBatis-Plus"><a href="#本章到此结束，如果还想继续学习，可以看看博客中的MyBatis-Plus" class="headerlink" title="本章到此结束，如果还想继续学习，可以看看博客中的MyBatis-Plus"></a>本章到此结束，如果还想继续学习，可以看看博客中的MyBatis-Plus</h1>]]></content>
+]]></content>
       <categories>
         <category>Java</category>
       </categories>
